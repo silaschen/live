@@ -1,0 +1,168 @@
+{extend name='index:base'}
+{block name='main'}
+<input type="hidden" name="cid" value="{:input('cid')}">
+<input type="hidden" name="vid" value="{:input('vid')}">
+<input type="hidden" name="time" value="{:input('time')}">
+<input type="hidden" name="tid" value="{:input('tid')}">
+		<div class="e-payment-section">
+			<div class="col-md-8 payment-left">
+				<div class="confirm-details">
+					<h3>核对您的付款信息</h3>
+
+
+				</div>
+
+
+				<div class="confirm-details">
+					<h3>please choose numbers u want to buy</h3>
+					<input type="number" id="num" name="number" value="1" class="form-control">{$buyed}/{$stock}
+
+				</div>
+
+
+				<div class="payment-options">
+					<h3>支付方式</h3>
+					<div class="tabs-box">
+					<ul class="tabs-menu booking-menu">
+						<li><a href="#tab1">银联卡</a></li>
+						<li><a href="#tab4">支付宝</a></li>
+					</ul>
+					<div class="clearfix"> </div>
+					<div class="tab-grids event-tab-grids">
+						<div id="tab1" class="tab-grid">
+							<img src="{$Think.config.WEBSERVER}/public/film/images/payment.png" alt="payment" />
+							<input name="banknum" type="text" class="payment" placeholder="您的卡号">
+							<input name="bankname" type="text" class="payment" placeholder="卡上的姓名">
+{if condition="$able eq 1"}
+							<input type="submit" class="go-to-pay" value="确认" onclick="makeOrder()">
+							{else/}
+								<input type="submit" class="go-to-pay" value="sold out" style="background:red;padding:10px;">
+{/if}
+						</div>
+
+
+						<div id="tab4" class="tab-grid">
+							<div class="row">
+                        <div class="col-md-12">
+                            <img class="pp-img" src="{$Think.config.WEBSERVER}/public/pay.png" alt="Image Alternative text" title="Image Title">
+                            <p style="color: red">请使用支付宝扫一扫完成付款.由于支付接口的对接需要真实的工商注册信息，在这里不再演示。</p><a class="btn btn-primary">(扫一扫)</a>
+                        </div>
+
+                    </div>
+						</div>
+							</div>
+					<div class="clearfix"> </div>
+				</div>
+	<!--start-carrer-->
+
+		<script>
+			$(document).ready(function() {
+				$("#tab2").hide();
+				$("#tab3").hide();
+				$("#tab4").hide();
+				$(".tabs-menu a").click(function(event){
+					event.preventDefault();
+					var tab=$(this).attr("href");
+					$(".tab-grid").not(tab).css("display","none");
+					$(tab).fadeIn("slow");
+				});
+			});
+		</script>
+
+				</div>
+			</div>
+			<div class="col-md-4">
+			<div class="payment-right">
+				<h3>订单信息</h3>
+				<h6><span>电影名称:</span>{$film['title']}</h6>
+				<p><span>电影院:</span> {$cinema['name']} </p>
+				<p><span>地址:</span> {$cinema['address']}</p>
+				<p><span>日期:</span> {$ticket['btime']|date="Y-m-d",###}---{$ticket['etime'|date="Y-m-d",###]}</p>
+				<p><span>放映时间:</span> {$time}</p>
+				<p><span>座位:</span> 影院随机分配</p>
+				<h4><span>共 :</span>{$film['price']}</h4>
+				<p>+ (平台服务费 : ￥. 1.00 )</p>
+				<h5><span>共 :</span><span id="total">{$film['price']+1}.00</span>￥</h5>
+			</div>
+			<div class="ticket-note">
+				<h3>注意:</h3>
+				<ol>
+					<li><p>一旦确认付款，该票无法退换，请在有效期内观影.</p></li>
+					<li><p>请确认付款信息无误后再支付，避免产生经济纠纷.</p></li>
+				</ol>
+			</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+
+<script type="text/javascript">
+
+$("#num").on("input propertychange",function(){
+
+		CheckTotal();
+
+
+});
+
+
+function CheckTotal(){
+	var vid=$("input[name='vid']").val();
+	var num = $("#num").val();
+	var time = $("input[name='time']").val();
+	var tid = $("input[name='tid']").val();
+	$.post("{:url('index/index/getTotal')}",{'vid':vid,'num':num,'tid':tid,'time':time},function(ret){
+
+		if(ret.able == false){
+			alert('no enough tickets');
+			return false;
+		}
+				if(ret.code === 1){
+
+
+							$("#total").html(ret.fee);
+
+
+				}
+
+
+
+	},'JSON');
+
+
+
+
+}
+		function makeOrder(){
+			var vid = $("input[name='vid']").val();
+			var cid = $("input[name='cid']").val();
+			var tid = $("input[name='tid']").val();
+			var time = $("input[name='time']").val();
+			var num = $("#num").val();
+
+			var banknum = $("input[name='banknum']").val();
+			var bankname = $("input[name='bankname']").val();
+
+			if(banknum == "" || bankname == ""){
+				alert('please input your pay info');
+				return false;
+			}
+			$.post('{:url('index/index/orderfilm')}',{'videoid':vid,'cinemaid':cid,'time':time,'ticketid':tid,'banknum':banknum,'bankname':bankname,'num':num},function(data){
+
+					alert(data.msg);
+					if(data.code === 1){
+
+						location.href="{:url('index/index/myticket')}";
+
+					}
+
+
+
+
+			},'JSON');
+
+		}
+
+
+</script>
+{/block}

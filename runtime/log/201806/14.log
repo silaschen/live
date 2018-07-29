@@ -1,0 +1,836 @@
+---------------------------------------------------------------
+[ 2018-06-14T20:57:28+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] film.com/ [运行时间：0.294103s][吞吐率：3.40req/s] [内存消耗：708.92kb] [文件加载：52]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /var/www/movie/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /var/www/movie/application/index/view/index/index.html [ array (
+  0 => 'navbuy',
+  1 => 'navonline',
+  2 => 'slides',
+  3 => 'notice',
+  4 => 'slidetwo',
+  5 => 'blog',
+  6 => 'now',
+  7 => 'week',
+  8 => 'will',
+  9 => 'online',
+  10 => 'top',
+  11 => 'webserver',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002514s ] mysql:host=127.0.0.1;dbname=film
+[ sql ] [ SQL ] select * from video where cate=1 order by id desc limit 4 [ RunTime:0.028918s ]
+[ sql ] [ SQL ] select * from video where cate=2 order by id desc limit 4 [ RunTime:0.000948s ]
+[ sql ] [ SQL ] select * from slides order by id desc limit 6 [ RunTime:0.002014s ]
+[ sql ] [ SQL ] select * from notice order by id desc limit 6 [ RunTime:0.002546s ]
+[ sql ] [ SQL ] select * from video where cate=1 order by id desc limit 8 [ RunTime:0.001162s ]
+[ sql ] [ SQL ] select * from video where cate=2 order by id desc limit 6 [ RunTime:0.001421s ]
+[ sql ] [ SQL ] select id,title,view from video where cate=1 order by view desc limit 6 [ RunTime:0.001545s ]
+[ sql ] [ SQL ] select * from video where cate=1 [ RunTime:0.001477s ]
+[ sql ] [ SQL ] select * from blog order by addtime desc limit 5 [ RunTime:0.004534s ]
+[ sql ] [ SQL ] select count(*) as total from likes where blogid=3 [ RunTime:0.003713s ]
+[ sql ] [ SQL ] select * from likes where userid=0 and blogid=3 and addtime between 1528905600 and 1528992000 [ RunTime:0.001353s ]
+[ sql ] [ SQL ] select count(*) as total from likes where blogid=2 [ RunTime:0.001151s ]
+[ sql ] [ SQL ] select * from likes where userid=0 and blogid=2 and addtime between 1528905600 and 1528992000 [ RunTime:0.001798s ]
+[ sql ] [ SQL ] select count(*) as total from likes where blogid=1 [ RunTime:0.001125s ]
+[ sql ] [ SQL ] select * from likes where userid=0 and blogid=1 and addtime between 1528905600 and 1528992000 [ RunTime:0.001742s ]
+---------------------------------------------------------------
+[ 2018-06-14T20:57:28+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.048787s][吞吐率：20.50req/s] [内存消耗：290.52kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:57:28+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.018356s][吞吐率：54.48req/s] [内存消耗：225.25kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:57:30+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/images/bg_direction_nav.png
+[ info ] film.com/public/film/images/bg_direction_nav.png [运行时间：0.024688s][吞吐率：40.51req/s] [内存消耗：225.70kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://film.com/public/film/css/flexslider.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/images/bg_direction_nav_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:57:30+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ info ] film.com/favicon.ico [运行时间：0.005396s][吞吐率：185.32req/s] [内存消耗：225.38kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://film.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/favicon_ico' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:58:04+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/playonline/id/13.html
+[ info ] film.com/index/index/playonline/id/13.html [运行时间：0.126333s][吞吐率：7.92req/s] [内存消耗：570.38kb] [文件加载：57]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'playonline',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://film.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/playonline/id/13_html' => '',
+  'id' => '13',
+)
+[ info ] [ RUN ] app\index\controller\Index->playonline[ /var/www/movie/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/movie/application/index/view/index/playonline.html [ array (
+  0 => 'navbuy',
+  1 => 'navonline',
+  2 => 'webserver',
+  3 => 'video',
+  4 => 'recommend',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001519s ] mysql:host=127.0.0.1;dbname=film
+[ sql ] [ SQL ] select * from video where cate=1 order by id desc limit 4 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] select * from video where cate=2 order by id desc limit 4 [ RunTime:0.002074s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `video` [ RunTime:0.004508s ]
+[ sql ] [ SQL ] SELECT * FROM `video` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.001564s ]
+[ sql ] [ SQL ] SELECT * FROM `video` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.002580s ]
+[ sql ] [ SQL ] update video set view='12' where id='13' [ RunTime:0.017094s ]
+[ sql ] [ SQL ] select id,title from video where cate=2 and id not in (13) order by view desc limit 8 [ RunTime:0.002886s ]
+[ error ] [8]未定义变量: ovo[/var/www/movie/runtime/temp/c9dfcb4b51a07af694aceb22a15a51c5.php:605]
+---------------------------------------------------------------
+[ 2018-06-14T20:58:04+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.008079s][吞吐率：123.78req/s] [内存消耗：225.53kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/playonline/id/13.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:58:04+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.007965s][吞吐率：125.55req/s] [内存消耗：225.53kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/playonline/id/13.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:58:21+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/index.html
+[ info ] film.com/index/index/index.html [运行时间：0.065662s][吞吐率：15.23req/s] [内存消耗：563.27kb] [文件加载：52]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://film.com/index/index/playonline/id/13.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/index_html' => '',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /var/www/movie/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /var/www/movie/application/index/view/index/index.html [ array (
+  0 => 'navbuy',
+  1 => 'navonline',
+  2 => 'slides',
+  3 => 'notice',
+  4 => 'slidetwo',
+  5 => 'blog',
+  6 => 'now',
+  7 => 'week',
+  8 => 'will',
+  9 => 'online',
+  10 => 'top',
+  11 => 'webserver',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001692s ] mysql:host=127.0.0.1;dbname=film
+[ sql ] [ SQL ] select * from video where cate=1 order by id desc limit 4 [ RunTime:0.001572s ]
+[ sql ] [ SQL ] select * from video where cate=2 order by id desc limit 4 [ RunTime:0.001191s ]
+[ sql ] [ SQL ] select * from slides order by id desc limit 6 [ RunTime:0.001336s ]
+[ sql ] [ SQL ] select * from notice order by id desc limit 6 [ RunTime:0.001329s ]
+[ sql ] [ SQL ] select * from video where cate=1 order by id desc limit 8 [ RunTime:0.001217s ]
+[ sql ] [ SQL ] select * from video where cate=2 order by id desc limit 6 [ RunTime:0.001014s ]
+[ sql ] [ SQL ] select id,title,view from video where cate=1 order by view desc limit 6 [ RunTime:0.001319s ]
+[ sql ] [ SQL ] select * from video where cate=1 [ RunTime:0.001591s ]
+[ sql ] [ SQL ] select count(*) as total from likes where blogid=3 [ RunTime:0.001943s ]
+[ sql ] [ SQL ] select * from likes where userid=0 and blogid=3 and addtime between 1528905600 and 1528992000 [ RunTime:0.001259s ]
+[ sql ] [ SQL ] select count(*) as total from likes where blogid=2 [ RunTime:0.001342s ]
+[ sql ] [ SQL ] select * from likes where userid=0 and blogid=2 and addtime between 1528905600 and 1528992000 [ RunTime:0.001674s ]
+[ sql ] [ SQL ] select count(*) as total from likes where blogid=1 [ RunTime:0.001267s ]
+[ sql ] [ SQL ] select * from likes where userid=0 and blogid=1 and addtime between 1528905600 and 1528992000 [ RunTime:0.000809s ]
+---------------------------------------------------------------
+[ 2018-06-14T20:58:21+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.008838s][吞吐率：113.15req/s] [内存消耗：225.52kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:58:21+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.008584s][吞吐率：116.50req/s] [内存消耗：225.52kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:58:22+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/images/bg_direction_nav.png
+[ info ] film.com/public/film/images/bg_direction_nav.png [运行时间：0.010266s][吞吐率：97.41req/s] [内存消耗：225.70kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://film.com/public/film/css/flexslider.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/images/bg_direction_nav_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:59:15+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/blog.html
+[ info ] film.com/index/index/blog.html [运行时间：0.069584s][吞吐率：14.37req/s] [内存消耗：594.27kb] [文件加载：60]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'blog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://film.com/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/blog_html' => '',
+)
+[ info ] [ RUN ] app\index\controller\Index->blog[ /var/www/movie/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/movie/application/index/view/index/blog.html [ array (
+  0 => 'navbuy',
+  1 => 'navonline',
+  2 => 'webserver',
+  3 => 'blog',
+  4 => 'page',
+  5 => 'hot',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001952s ] mysql:host=127.0.0.1;dbname=film
+[ sql ] [ SQL ] select * from video where cate=1 order by id desc limit 4 [ RunTime:0.002576s ]
+[ sql ] [ SQL ] select * from video where cate=2 order by id desc limit 4 [ RunTime:0.002225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog` [ RunTime:0.004515s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1 [ RunTime:0.001379s ]
+[ sql ] [ SQL ] SELECT * FROM `blog` ORDER BY id desc LIMIT 0,6 [ RunTime:0.002178s ]
+[ sql ] [ SQL ] select id,title from blog order by id asc limit 10 [ RunTime:0.001435s ]
+[ error ] [8]未定义数组索引: desciption[/var/www/movie/runtime/temp/93cf138c1c1b00f0ac289d20a73290ac.php:454]
+[ error ] [8]未定义数组索引: desciption[/var/www/movie/runtime/temp/93cf138c1c1b00f0ac289d20a73290ac.php:454]
+[ error ] [8]未定义数组索引: desciption[/var/www/movie/runtime/temp/93cf138c1c1b00f0ac289d20a73290ac.php:454]
+[ error ] [8]未定义变量: ovo[/var/www/movie/runtime/temp/93cf138c1c1b00f0ac289d20a73290ac.php:584]
+---------------------------------------------------------------
+[ 2018-06-14T20:59:15+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.011136s][吞吐率：89.80req/s] [内存消耗：225.52kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/blog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:59:16+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.008291s][吞吐率：120.61req/s] [内存消耗：225.52kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/blog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:59:19+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/single.html
+[ info ] film.com/index/index/single.html [运行时间：0.009223s][吞吐率：108.42req/s] [内存消耗：305.49kb] [文件加载：48]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'single',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://film.com/index/index/blog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/single_html' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:59:22+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/blog.html
+[ info ] film.com/index/index/blog.html [运行时间：0.036059s][吞吐率：27.73req/s] [内存消耗：592.92kb] [文件加载：60]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'blog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://film.com/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/blog_html' => '',
+)
+[ info ] [ RUN ] app\index\controller\Index->blog[ /var/www/movie/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/movie/application/index/view/index/blog.html [ array (
+  0 => 'navbuy',
+  1 => 'navonline',
+  2 => 'webserver',
+  3 => 'blog',
+  4 => 'page',
+  5 => 'hot',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002180s ] mysql:host=127.0.0.1;dbname=film
+[ sql ] [ SQL ] select * from video where cate=1 order by id desc limit 4 [ RunTime:0.002416s ]
+[ sql ] [ SQL ] select * from video where cate=2 order by id desc limit 4 [ RunTime:0.002260s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog` [ RunTime:0.004234s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1 [ RunTime:0.001275s ]
+[ sql ] [ SQL ] SELECT * FROM `blog` ORDER BY id desc LIMIT 0,6 [ RunTime:0.002201s ]
+[ sql ] [ SQL ] select id,title from blog order by id asc limit 10 [ RunTime:0.001142s ]
+[ error ] [8]未定义数组索引: desciption[/var/www/movie/runtime/temp/93cf138c1c1b00f0ac289d20a73290ac.php:454]
+[ error ] [8]未定义数组索引: desciption[/var/www/movie/runtime/temp/93cf138c1c1b00f0ac289d20a73290ac.php:454]
+[ error ] [8]未定义数组索引: desciption[/var/www/movie/runtime/temp/93cf138c1c1b00f0ac289d20a73290ac.php:454]
+[ error ] [8]未定义变量: ovo[/var/www/movie/runtime/temp/93cf138c1c1b00f0ac289d20a73290ac.php:584]
+---------------------------------------------------------------
+[ 2018-06-14T20:59:22+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.007028s][吞吐率：142.29req/s] [内存消耗：225.52kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/blog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:59:22+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.008146s][吞吐率：122.76req/s] [内存消耗：225.52kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/blog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:59:24+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/readblog/id/3.html
+[ info ] film.com/index/index/readblog/id/3.html [运行时间：0.039467s][吞吐率：25.34req/s] [内存消耗：562.38kb] [文件加载：57]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'readblog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://film.com/index/index/blog.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/readblog/id/3_html' => '',
+  'id' => '3',
+)
+[ info ] [ RUN ] app\index\controller\Index->readblog[ /var/www/movie/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/movie/application/index/view/index/single.html [ array (
+  0 => 'navbuy',
+  1 => 'navonline',
+  2 => 'blog',
+  3 => 'webserver',
+  4 => 'comments',
+  5 => 'latest',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001881s ] mysql:host=127.0.0.1;dbname=film
+[ sql ] [ SQL ] select * from video where cate=1 order by id desc limit 4 [ RunTime:0.002451s ]
+[ sql ] [ SQL ] select * from video where cate=2 order by id desc limit 4 [ RunTime:0.002395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog` [ RunTime:0.004760s ]
+[ sql ] [ SQL ] SELECT * FROM `blog` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001750s ]
+[ sql ] [ SQL ] select a.content,a.addtime,b.nickname from blog_comment a left join user b ON a.uid=b.id where a.blogid='3' [ RunTime:0.006432s ]
+[ sql ] [ SQL ] select id,title from blog order by addtime desc limit 15 [ RunTime:0.001569s ]
+[ error ] [8]未定义变量: ovo[/var/www/movie/runtime/temp/9ec4f2e0444c5d8aba185efa113beb73.php:637]
+---------------------------------------------------------------
+[ 2018-06-14T20:59:24+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.006452s][吞吐率：154.99req/s] [内存消耗：225.53kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/readblog/id/3.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:59:25+08:00 ] 127.0.0.1 127.0.0.1 GET /public/film/css/megamenu.css
+[ info ] film.com/public/film/css/megamenu.css [运行时间：0.006541s][吞吐率：152.88req/s] [内存消耗：225.53kb] [文件加载：40]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'film',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://film.com/index/index/readblog/id/3.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/public/film/css/megamenu_css' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-06-14T20:59:25+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/readblog/id/3.html
+[ info ] film.com/index/index/readblog/id/3.html [运行时间：0.039651s][吞吐率：25.22req/s] [内存消耗：560.85kb] [文件加载：57]
+[ info ] [ LANG ] /var/www/movie/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'readblog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'film.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://film.com/index/index/readblog/id/3.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=asb7mec8lq627q6dt074ip9q00',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/readblog/id/3_html' => '',
+  'id' => '3',
+)
+[ info ] [ RUN ] app\index\controller\Index->readblog[ /var/www/movie/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/movie/application/index/view/index/single.html [ array (
+  0 => 'navbuy',
+  1 => 'navonline',
+  2 => 'blog',
+  3 => 'webserver',
+  4 => 'comments',
+  5 => 'latest',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002105s ] mysql:host=127.0.0.1;dbname=film
+[ sql ] [ SQL ] select * from video where cate=1 order by id desc limit 4 [ RunTime:0.002711s ]
+[ sql ] [ SQL ] select * from video where cate=2 order by id desc limit 4 [ RunTime:0.002043s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog` [ RunTime:0.004977s ]
+[ sql ] [ SQL ] SELECT * FROM `blog` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.003083s ]
+[ sql ] [ SQL ] select a.content,a.addtime,b.nickname from blog_comment a left join user b ON a.uid=b.id where a.blogid='3' [ RunTime:0.002784s ]
+[ sql ] [ SQL ] select id,title from blog order by addtime desc limit 15 [ RunTime:0.001869s ]
+[ error ] [8]未定义变量: ovo[/var/www/movie/runtime/temp/9ec4f2e0444c5d8aba185efa113beb73.php:637]
