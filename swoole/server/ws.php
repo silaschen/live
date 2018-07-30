@@ -1,11 +1,4 @@
 <?php
-/**
- * ws 优化 基础类库
- * User: singwa
- * Date: 18/3/2
- * Time: 上午12:34
- */
-
 class Ws {
 
     CONST HOST = "0.0.0.0";
@@ -13,23 +6,60 @@ class Ws {
 
     public $ws = null;
     public function __construct() {
-        $this->ws = new swoole_websocket_server("0.0.0.0", 8812);
+        $this->ws = new swoole_websocket_server("0.0.0.0", 8800);
 
         $this->ws->set(
             [
-                'worker_num' => 2,
-                'task_worker_num' => 2,
+                'enable_static_handler' => true,
+                'document_root' => "/var/www/movie/public/static",
+                "worker_num"=>1
             ]
         );
+        $this->ws->on('workstart',[$this,'OnWorkStart']);
+        $this->ws->on('request',[$this,'OnWorkStart']);
         $this->ws->on("open", [$this, 'onOpen']);
         $this->ws->on("message", [$this, 'onMessage']);
         $this->ws->on("task", [$this, 'onTask']);
         $this->ws->on("finish", [$this, 'onFinish']);
         $this->ws->on("close", [$this, 'onClose']);
-
         $this->ws->start();
     }
 
+
+    function OnWorkStart($ws,$workid){
+        define("APP_PATH",'/var/www/movie/application/');
+        require "/var/www/movie/thinkphp/base.php";
+    }
+
+
+    function OnRequest($request, $response){
+        $_SERVER = [];
+        if(isset($request->server)){
+            foreach($request->server as $k=>$v){
+                    $_SERVER[strtoupper($k)] = $v;
+
+                }
+        }
+
+        $_GET=[];
+        if(isset($request->get)){
+                    foreach($request->get as $k=>$v){
+                                    $_GET[$k] = $v;
+
+                            }
+            }
+            $_POST = [];
+         if(isset($request->post)){
+                    foreach($request->get as $k=>$v){
+                                    $_POST[$k] = $v;
+                            }
+            }
+        ob_start();
+        think\App::run()->send();
+        $res=ob_get_contents();
+        ob_end_clean();
+        $response->end($res);
+    }
     /**
      * 监听ws连接事件
      * @param $ws
