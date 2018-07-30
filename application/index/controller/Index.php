@@ -16,7 +16,7 @@ class Index extends Common
 			return;
 		}
 		$redis=\redisObj\redisTool::getRedis();
-
+		$_POST['server']->task(['code'=>$code,'phone'=>$phone]);
 		if($redis->get(self::getverikey($phone))){
 			echo json_encode(['msg'=>'please wait to retry']);
 			return;

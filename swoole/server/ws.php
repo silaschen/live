@@ -2,21 +2,22 @@
 class Ws {
 
     CONST HOST = "0.0.0.0";
-    CONST PORT = 8812;
+    CONST PORT = 8800;
 
     public $ws = null;
     public function __construct() {
-        $this->ws = new swoole_websocket_server("0.0.0.0", 8800);
+        $this->ws = new swoole_websocket_server(self::HOST, self::PORT);
 
         $this->ws->set(
             [
                 'enable_static_handler' => true,
                 'document_root' => "/var/www/movie/public/static",
-                "worker_num"=>1
+                "worker_num"=>4,
+		
             ]
         );
-        $this->ws->on('workstart',[$this,'OnWorkStart']);
-        $this->ws->on('request',[$this,'OnWorkStart']);
+        $this->ws->on('workerstart',[$this,'OnWorkStart']);
+        $this->ws->on('request',[$this,'OnRequest']);
         $this->ws->on("open", [$this, 'onOpen']);
         $this->ws->on("message", [$this, 'onMessage']);
         $this->ws->on("task", [$this, 'onTask']);
@@ -49,6 +50,7 @@ class Ws {
                             }
             }
             $_POST = [];
+		$_POST['server'] = $this->ws;
          if(isset($request->post)){
                     foreach($request->get as $k=>$v){
                                     $_POST[$k] = $v;
