@@ -7,7 +7,10 @@ use app\index\controller\Common;
 ini_set('display_errors','On');
 class Index extends Common
 {
+		function index(){
 
+			return ;
+		}
 
 	public function test(){
 		$phone =$_GET['phone'];
@@ -17,7 +20,7 @@ class Index extends Common
 		}
 		$redis=\redisObj\redisTool::getRedis();
 		$_POST['server']->task(['code'=>$code,'phone'=>$phone]);
-		if($redis->get(self::getverikey($phone))){
+		/**if($redis->get(self::getverikey($phone))){
 			echo json_encode(['msg'=>'please wait to retry']);
 			return;
 		}
@@ -26,7 +29,7 @@ class Index extends Common
 		if($res->Code === 'OK'){
 			
 			\redisObj\redisTool::getRedis()->setkey("verify_".$phone,60*2,$code);
-		}
+		}**/
 			
 
 	}

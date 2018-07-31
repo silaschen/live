@@ -13,6 +13,7 @@ class Ws {
                 'enable_static_handler' => true,
                 'document_root' => "/var/www/movie/public/static",
                 "worker_num"=>4,
+		"task_worker_num"=>2
 		
             ]
         );
@@ -29,7 +30,7 @@ class Ws {
 
     function OnWorkStart($ws,$workid){
         define("APP_PATH",'/var/www/movie/application/');
-        require "/var/www/movie/thinkphp/base.php";
+        require "/var/www/movie/thinkphp/start.php";
     }
 
 
@@ -105,9 +106,16 @@ class Ws {
      * @param $data
      */
     public function onTask($serv, $taskId, $workerId, $data) {
-        print_r($data);
-        // 耗时场景 10s
-        sleep(10);
+	$redis = redisObj\redisTool::getRedis();
+       $phone = $data['phone'];
+	$code=$data['code'];
+                $code = \app\index\controller\Index::getSmsCode($phone);
+                $res =\app\index\controller\Help::sendSms($phone,$code);
+                if($res->Code === 'OK'){
+                        
+                        \redisObj\redisTool::getRedis()->setkey("verify_".$phone,60*2,$code);
+                }
+
         return "on task finish"; // 告诉worker
     }
 
