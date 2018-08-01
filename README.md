@@ -1,4 +1,5 @@
-SWOOLE a project for live sport
+This is a project using swoole.
+It's very funny to run swoole.
 
 
 
