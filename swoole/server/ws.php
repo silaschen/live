@@ -106,8 +106,7 @@ class Ws {
      * @param $data
      */
     public function onTask($serv, $taskId, $workerId, $data) {
-	$redis = redisObj\redisTool::getRedis();
-       $phone = $data['phone'];
+        $phone = $data['phone'];
 	$code=$data['code'];
                 $code = \app\index\controller\Index::getSmsCode($phone);
                 $res =\app\index\controller\Help::sendSms($phone,$code);

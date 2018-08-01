@@ -20,17 +20,7 @@ class Index extends Common
 		}
 		$redis=\redisObj\redisTool::getRedis();
 		$_POST['server']->task(['code'=>$code,'phone'=>$phone]);
-		/**if($redis->get(self::getverikey($phone))){
-			echo json_encode(['msg'=>'please wait to retry']);
-			return;
-		}
-		$code = self::getSmsCode($phone);
-		$res = Help::sendSms($phone,$code);
-		if($res->Code === 'OK'){
-			
-			\redisObj\redisTool::getRedis()->setkey("verify_".$phone,60*2,$code);
-		}**/
-			
+		Help::show(['code'=>HELP::SUCCESS_CODE,'msg'=>'the msg has send.']);
 
 	}
 
