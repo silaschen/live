@@ -30,14 +30,10 @@ class Index extends Common
 		$value = \redisObj\redisTool::getRedis()->get(self::getverikey($phone));
 		if(!$value){
 			echo json_encode(['msg'=>'waste time,please reget code']);
-		return;
+		        return;
 		}
-
-
-		echo json_encode(['res'=>$value === $code]);
+		echo json_encode(['code'=>$value === $code]);
 		return;		
-
-
 	}	
 
 
@@ -47,7 +43,6 @@ class Index extends Common
 		$code = mb_substr($phone,2,1);
 		$code.=rand(1000,9999);	
 		return $code;	
-
 	}
 
 	static function getverikey($phone){
