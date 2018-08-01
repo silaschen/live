@@ -20,17 +20,7 @@ class Index extends Common
 		}
 		$redis=\redisObj\redisTool::getRedis();
 		$_POST['server']->task(['code'=>$code,'phone'=>$phone]);
-		/**if($redis->get(self::getverikey($phone))){
-			echo json_encode(['msg'=>'please wait to retry']);
-			return;
-		}
-		$code = self::getSmsCode($phone);
-		$res = Help::sendSms($phone,$code);
-		if($res->Code === 'OK'){
-			
-			\redisObj\redisTool::getRedis()->setkey("verify_".$phone,60*2,$code);
-		}**/
-			
+		Help::show(['code'=>HELP::SUCCESS_CODE,'msg'=>'the msg has send.']);
 
 	}
 
@@ -40,14 +30,10 @@ class Index extends Common
 		$value = \redisObj\redisTool::getRedis()->get(self::getverikey($phone));
 		if(!$value){
 			echo json_encode(['msg'=>'waste time,please reget code']);
-		return;
+		        return;
 		}
-
-
-		echo json_encode(['res'=>$value === $code]);
+		echo json_encode(['code'=>$value === $code]);
 		return;		
-
-
 	}	
 
 
@@ -57,7 +43,6 @@ class Index extends Common
 		$code = mb_substr($phone,2,1);
 		$code.=rand(1000,9999);	
 		return $code;	
-
 	}
 
 	static function getverikey($phone){

@@ -181,5 +181,11 @@ class Help
         return $acsResponse;
     }
 
+    public static function show($data){
+    	echo json_encode($data);
+    	return;
+    
+    }
+
 }
 
