@@ -95,7 +95,7 @@
 		  $('#authCodeBtn').click(function (event) {
 
 			    var phone_num = $(" input[ name='phone_num' ] ").val()
-				url = "http://127.0.0.1:8800?s=index/index/test&phone="+phone_num;
+				url = "http://13.112.100.120:8800?s=index/index/test&phone="+phone_num;
 				$(this).html('已发送').attr('disabled', true);
 				// $.post()
 				$.get(url, function (data) {
@@ -114,7 +114,7 @@
 				event.preventDefault();
 				var formData = $('form').serialize();
 				// TODO: 请求后台接口跳转界面，前端跳转或者后台跳
-				$.get("https://127.0.0.1:8800?s=index/index/verify&"+formData, function (data) {
+				$.get("http://13.112.100.120:8800?s=index/index/verify&"+formData, function (data) {
 					console.log(formData);
 					// location.href='index.html';
 				});
