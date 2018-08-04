@@ -20,7 +20,7 @@ class Index extends Common
 		}
 		$redis=\redisObj\redisTool::getRedis();
 		$_POST['server']->task(['code'=>$code,'phone'=>$phone]);
-		Help::show(['code'=>HELP::SUCCESS_CODE,'msg'=>'the msg has send.']);
+		Help::show(['code'=>1,'msg'=>'the msg has send.']);
 
 	}
 
@@ -32,7 +32,9 @@ class Index extends Common
 			echo json_encode(['msg'=>'waste time,please reget code']);
 		        return;
 		}
-		echo json_encode(['code'=>$value === $code]);
+		//header("Content-Type:application/json");
+		\redisObj\redisTool::getRedis()->callAction('delete',[self::getverikey($phone)]);
+		echo json_encode(['code'=>$code===$value]);
 		return;		
 	}	
 
@@ -49,5 +51,32 @@ class Index extends Common
 
 		return 'verify_'.$phone;
 	}
+	
+
+
+	public function push(){
+
+		$msg = $_GET['content'];
+		$data = [
+			'time'=>date('H:i:s',time()),
+			'con'=>$msg
+
+			];
+		$users=  \redisObj\redisTool::getRedis()->callAction('sMembers',['LIVE_USER']);
+var_dump($users);
+		foreach($users as $v){
+
+
+			$_POST['server']->push($v,json_encode($data));
+		}
+
+
+
+
+	}
+
+
+
+
 
 }

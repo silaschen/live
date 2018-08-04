@@ -62,7 +62,14 @@ class redisTool{
 
 
 
+	public function callAction($fun,$param=array()){
 
+
+			
+		return call_user_func_array([$this->redisw,$fun],$param);
+
+
+	}
 
 
 

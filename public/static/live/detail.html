@@ -10,12 +10,14 @@
 	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
 	<meta content="telephone=no" name="format-detection" />
 	<meta content="email=no" name="format-detection" />
-	<link rel="stylesheet" type="text/css" href="./assert/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="./assert/css/main.css" />
-	<link rel="stylesheet" href="./assert/iconfont/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="assert/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="assert/css/main.css" />
+	<link rel="stylesheet" href="assert/iconfont/iconfont.css">
 	<link rel="shortcut icon" href="./favicon.ico">
-	<script src="./assert/js/jquery-3.3.1.min.js"></script>
-	<style>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/live.js"></script>	
+
+		<style>
 		/*详情界面保持上部分静止，下面滚动; 同样利用flex布局 poster自然高度， tab-nav自然高度， tab-block填满剩余部分*/
 		.poster {
 			position: relative;
@@ -265,7 +267,7 @@
 		</div>
 		<div class="tab-block">
 			<div id="match-result">
-				<div class="frame">
+				<div class="frame" id='con'>
 					<h3 class="frame-header">
 						<i class="icon iconfont icon-shijian"></i>第一节 01：30
 					</h3>

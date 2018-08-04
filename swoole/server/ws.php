@@ -31,6 +31,8 @@ class Ws {
     function OnWorkStart($ws,$workid){
         define("APP_PATH",'/var/www/movie/application/');
         require "/var/www/movie/thinkphp/start.php";
+	\redisObj\redisTool::getRedis()->callAction('delete',['LIVE_USER']);
+	
     }
 
 
@@ -70,12 +72,7 @@ class Ws {
      */
     public function onOpen($ws, $request) {
         var_dump($request->fd);
-        if($request->fd == 1) {
-            // 每2秒执行
-            swoole_timer_tick(2000, function($timer_id){
-                echo "2s: timerId:{$timer_id}\n";
-            });
-        }
+	redisObj\redisTool::getRedis()->callAction('sAdd',['LIVE_USER',$request->fd]);
     }
 
     /**
@@ -135,6 +132,8 @@ class Ws {
      */
     public function onClose($ws, $fd) {
         echo "clientid:{$fd}\n";
+	 redisObj\redisTool::getRedis()->callAction('sRem',['LIVE_USER',$fd]);
+
     }
 }
 
