@@ -7,7 +7,8 @@ class Ws {
     public $ws = null;
     public function __construct() {
         $this->ws = new swoole_websocket_server(self::HOST, self::PORT);
-
+	$this->ws->listen('0.0.0.0',8900,SWOOLE_SOCK_TCP);
+	$this->ws->listen('0.0.0.0',9900,SWOOLE_SOCK_TCP);
         $this->ws->set(
             [
                 'enable_static_handler' => true,
@@ -38,6 +39,7 @@ class Ws {
 
     function OnRequest($request, $response){
         $_SERVER = [];
+	#var_dump($request->server);
         if(isset($request->server)){
             foreach($request->server as $k=>$v){
                     $_SERVER[strtoupper($k)] = $v;
@@ -55,12 +57,12 @@ class Ws {
             $_POST = [];
 		$_POST['server'] = $this->ws;
          if(isset($request->post)){
-                    foreach($request->get as $k=>$v){
+                    foreach($request->post as $k=>$v){
                                     $_POST[$k] = $v;
                             }
             }
         ob_start();
-        think\App::run()->send();
+       think\App::run()->send();
         $res=ob_get_contents();
         ob_end_clean();
         $response->end($res);
@@ -71,8 +73,8 @@ class Ws {
      * @param $request
      */
     public function onOpen($ws, $request) {
-        var_dump($request->fd);
-	redisObj\redisTool::getRedis()->callAction('sAdd',['LIVE_USER',$request->fd]);
+       // var_dump($ws);
+	//redisObj\redisTool::getRedis()->callAction('sAdd',['LIVE_USER',$request->fd]);
     }
 
     /**

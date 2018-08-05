@@ -25,6 +25,7 @@ class Index extends Common
 	}
 
 	public function verify(){
+		//var_dump($_SERVER);
 		$code=$_GET['code'];
 		$phone = $_GET['phone_num'];
 		$value = \redisObj\redisTool::getRedis()->get(self::getverikey($phone));
@@ -62,12 +63,14 @@ class Index extends Common
 			'con'=>$msg
 
 			];
-		$users=  \redisObj\redisTool::getRedis()->callAction('sMembers',['LIVE_USER']);
-var_dump($users);
-		foreach($users as $v){
+	//	$users=  \redisObj\redisTool::getRedis()->callAction('sMembers',['LIVE_USER']);
+//var_dump($users);
+//	var_dump($_POST['server']->ports[0]->connections);
+//	var_dump($_POST['server']->ports[1]->connections);
+		foreach($_POST['server']->ports[2]->connections as $a){
 
 
-			$_POST['server']->push($v,json_encode($data));
+			$_POST['server']->push($a,json_encode($data));
 		}
 
 
@@ -76,7 +79,19 @@ var_dump($users);
 	}
 
 
+	public function chat(){
 
+		$cont = $_POST['cont'];
+		foreach($_POST['server']->ports[1]->connections as $v){
+			$_POST['server']->push($v,json_encode(['user'=>'18811174687','conttt'=>$cont]));
+			
+
+		}
+
+
+
+
+	}
 
 
 }

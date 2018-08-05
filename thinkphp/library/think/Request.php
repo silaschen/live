@@ -384,15 +384,21 @@ class Request
     public function pathinfo()
     {
       //  if (is_null($this->pathinfo)) {
+	
             if (isset($_GET[Config::get('var_pathinfo')])) {
+	//	echo "s 模式";
                 // 判断URL里面是否有兼容模式参数
                 $_SERVER['PATH_INFO'] = $_GET[Config::get('var_pathinfo')];
                 unset($_GET[Config::get('var_pathinfo')]);
             } elseif (IS_CLI) {
+	//	echo 'cli';
                 // CLI模式下 index.php module/controller/action/params/...
-                $_SERVER['PATH_INFO'] = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : '';
+                $_SERVER['PATH_INFO'] = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : $_SERVER['PATH_INFO'];
             }
 
+
+	//	print_r($_SERVER);
+	//	print_r($_SERVER['PATH_INFO']);
             // 分析PATHINFO信息
             if (!isset($_SERVER['PATH_INFO'])) {
                 foreach (Config::get('pathinfo_fetch') as $type) {
@@ -405,6 +411,7 @@ class Request
             }
             $this->pathinfo = empty($_SERVER['PATH_INFO']) ? '/' : ltrim($_SERVER['PATH_INFO'], '/');
        // }
+	//var_dump($this->pathinfo);
         return $this->pathinfo;
     }
 
